@@ -2722,4 +2722,10 @@ extern const u8 gText_PlayerScurriedBackHome[];
 extern const u8 gText_Relearn[]; // move relearner from summary screen
 extern const u8 gText_Rename[]; // change nickname from summary screen
 
+// Multichoice for Randomizer Species Mode settings
+extern const u8 gText_CompleteRandomMons[];
+extern const u8 gText_LegendForLegendRandomMons[];
+extern const u8 gText_BasestatPoolRandomMons[];
+extern const u8 gText_EvolutionaryRandomMons[];
+
 #endif // GUARD_STRINGS_H

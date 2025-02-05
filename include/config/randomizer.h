@@ -44,26 +44,31 @@
 // These flags control whether a particular randomization feature is active.
 // They are ignored and disabled if the flags above are set.
 #ifndef FORCE_RANDOMIZE_WILD_MON
-#define RANDOMIZER_FLAG_WILD_MON            FLAG_UNUSED_0x020
+#define RANDOMIZER_FLAG_WILD_MON            FLAG_RANDOM_WILD_MON     // FLAGS can be renamed to something else (rename it also in the flags.h file)
 #endif
 
 #ifndef FORCE_RANDOMIZE_FIELD_ITEMS
-#define RANDOMIZER_FLAG_FIELD_ITEMS         FLAG_UNUSED_0x021
+#define RANDOMIZER_FLAG_FIELD_ITEMS         FLAG_RANDOM_FIELD_ITEMS
 #endif
 
 #ifndef FORCE_RANDOMIZE_TRAINER_MON
-#define RANDOMIZER_FLAG_TRAINER_MON         FLAG_UNUSED_0x022
+#define RANDOMIZER_FLAG_TRAINER_MON         FLAG_RANDOM_TRAINER_MON
 #endif
 
 #ifndef FORCE_RANDOMIZE_FIXED_MON
-#define RANDOMIZER_FLAG_FIXED_MON           FLAG_UNUSED_0x023
+#define RANDOMIZER_FLAG_FIXED_MON           FLAG_RANDOM_FIXED_MON
 #endif
 
 #ifndef FORCE_RANDOMIZE_STARTERS
-#define RANDOMIZER_FLAG_STARTERS            FLAG_UNUSED_0x024
+#define RANDOMIZER_FLAG_STARTERS            FLAG_RANDOM_STARTERS
 #endif
 
-#define RANDOMIZER_VAR_SPECIES_MODE         VAR_UNUSED_0x404E
+// Set the Variable VAR_RANDOM_SPECIES_MODE via | setflag VAR_RANDOM_SPECIES_MODE, X | to set or change the randomizer mode.
+// 0 = Completely Random-Mons  (DEFAULT)
+// 1 = Legends for Legends & Normal for Normal                
+// 2 = Basestatpool randomization                    
+// 3 = Evolutionary stage based. (Legendaries are separate, as are Pokémon that don't have any evolutionary relations.)
+#define RANDOMIZER_VAR_SPECIES_MODE         VAR_RANDOM_SPECIES_MODE
 
 #if RANDOMIZER_SEED_IS_TRAINER_ID == FALSE
 #define RANDOMIZER_VAR_SEED_L               VAR_UNUSED_0x40FA

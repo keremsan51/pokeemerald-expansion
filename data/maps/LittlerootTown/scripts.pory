@@ -1021,7 +1021,7 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Let's go to my LAB.$"
 `
 
-// ...existing code...
+// BIRCH CASE OPEN
 script birch_case {
     lockall
     callnative (StartNewPokeballCaseUI)
@@ -1029,4 +1029,56 @@ script birch_case {
     releaseall
     end
 }
-// ...existing code...
+
+// MOVE RELEARNER VERSION 0.1
+
+script Move_Relearner_Start {
+	lock
+	msgbox ("Do you want to relearn a move?", MSGBOX_YESNO)
+	if (var(VAR_RESULT) == YES) {
+		call (Move_Relearner)
+	}
+	else {
+		msgbox ("Come back if you change your mind.")
+		release
+		end
+	}
+}
+
+script Move_Relearner {
+	lock
+	msgbox ("Which POKéMON should learn a move?")
+	callnative (ChooseMonForMoveRelearner)
+	waitstate
+	if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN) {
+		msgbox ("Come back if you change your mind.")
+		release
+		end
+	}
+	else {
+	callnative (IsSelectedMonEgg)
+	}
+	if (var(VAR_RESULT) == TRUE) {
+		msgbox ("An Egg can't learn any moves...")
+		release
+		end
+	}
+	elif (var(VAR_0x8005) == 0) {
+		msgbox ("That POKéMON is not compatible.")
+		release
+		end
+	}
+	else {
+		msgbox ("Which move should be relarned?")
+		callnative (TeachMoveRelearnerMove)
+		waitstate
+		if  (var(VAR_0x8004) == 0) {
+			return (Move_Relearner)
+		}
+		else {
+			msgbox ("Come again soon!")
+			release
+			end
+		}
+	}
+}

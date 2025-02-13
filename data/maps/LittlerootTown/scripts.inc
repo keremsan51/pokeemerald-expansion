@@ -2052,3 +2052,111 @@ birch_case::
 	releaseall
 	end
 
+
+Move_Relearner_Start::
+# 1036 "data/maps/LittlerootTown/scripts.pory"
+	lock
+# 1037 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Start_Text_0, MSGBOX_YESNO
+# 1038 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Move_Relearner_Start_1
+# 1042 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Start_Text_1
+# 1043 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+Move_Relearner_Start_1:
+# 1039 "data/maps/LittlerootTown/scripts.pory"
+	call Move_Relearner
+	return
+
+
+Move_Relearner::
+# 1049 "data/maps/LittlerootTown/scripts.pory"
+	lock
+# 1050 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Text_0
+# 1051 "data/maps/LittlerootTown/scripts.pory"
+	callnative ChooseMonForMoveRelearner
+# 1052 "data/maps/LittlerootTown/scripts.pory"
+	waitstate
+# 1053 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_0x8004, PARTY_NOTHING_CHOSEN
+	goto_if_eq Move_Relearner_2
+# 1059 "data/maps/LittlerootTown/scripts.pory"
+	callnative IsSelectedMonEgg
+# 1061 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq Move_Relearner_5
+# 1066 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_0x8005, 0
+	goto_if_eq Move_Relearner_6
+# 1072 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Text_3
+# 1073 "data/maps/LittlerootTown/scripts.pory"
+	callnative TeachMoveRelearnerMove
+# 1074 "data/maps/LittlerootTown/scripts.pory"
+	waitstate
+# 1075 "data/maps/LittlerootTown/scripts.pory"
+	compare VAR_0x8004, 0
+	goto_if_eq Move_Relearner_10
+# 1079 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Text_4
+# 1080 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+Move_Relearner_2:
+# 1054 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Start_Text_1
+# 1055 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+Move_Relearner_5:
+# 1062 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Text_1
+# 1063 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+Move_Relearner_6:
+# 1067 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Move_Relearner_Text_2
+# 1068 "data/maps/LittlerootTown/scripts.pory"
+	release
+	end
+
+Move_Relearner_10:
+	return
+
+
+Move_Relearner_Start_Text_0:
+# 1037 "data/maps/LittlerootTown/scripts.pory"
+	.string "Do you want to relearn a move?$"
+
+Move_Relearner_Start_Text_1:
+# 1042 "data/maps/LittlerootTown/scripts.pory"
+	.string "Come back if you change your mind.$"
+
+Move_Relearner_Text_0:
+# 1050 "data/maps/LittlerootTown/scripts.pory"
+	.string "Which POKéMON should learn a move?$"
+
+Move_Relearner_Text_1:
+# 1062 "data/maps/LittlerootTown/scripts.pory"
+	.string "An Egg can't learn any moves...$"
+
+Move_Relearner_Text_2:
+# 1067 "data/maps/LittlerootTown/scripts.pory"
+	.string "That POKéMON is not compatible.$"
+
+Move_Relearner_Text_3:
+# 1072 "data/maps/LittlerootTown/scripts.pory"
+	.string "Which move should be relarned?$"
+
+Move_Relearner_Text_4:
+# 1079 "data/maps/LittlerootTown/scripts.pory"
+	.string "Come again soon!$"

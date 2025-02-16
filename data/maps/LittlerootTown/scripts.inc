@@ -2133,6 +2133,16 @@ Move_Relearner_10:
 	return
 
 
+Littleroot_Red_Trainer_Battle::
+# 1089 "data/maps/LittlerootTown/scripts.pory"
+	trainerbattle_single TRAINER_RED, Littleroot_Red_Intro, Littleroot_Red_Outro
+# 1090 "data/maps/LittlerootTown/scripts.pory"
+	msgbox Littleroot_Red_Postbattle, MSGBOX_AUTOCLOSE
+# 1091 "data/maps/LittlerootTown/scripts.pory"
+	waitmessage
+	end
+
+
 Move_Relearner_Start_Text_0:
 # 1037 "data/maps/LittlerootTown/scripts.pory"
 	.string "Do you want to relearn a move?$"
@@ -2160,3 +2170,19 @@ Move_Relearner_Text_3:
 Move_Relearner_Text_4:
 # 1079 "data/maps/LittlerootTown/scripts.pory"
 	.string "Come again soon!$"
+
+Littleroot_Red_Intro::
+# 1097 "data/maps/LittlerootTown/scripts.pory"
+	.string "Intro Text!$"
+
+Littleroot_Red_Outro::
+# 1101 "data/maps/LittlerootTown/scripts.pory"
+	.string "Outro Text.$"
+
+Littleroot_Red_Postbattle::
+# 1105 "data/maps/LittlerootTown/scripts.pory"
+	.string "Postbattle text Postbattle text\n"
+	.string "Postbattle text Postbattle text\l"
+	.string "Postbattle text Postbattle text\l"
+	.string "Postbattle text Postbattle text\l"
+	.string "Postbattle text.$"

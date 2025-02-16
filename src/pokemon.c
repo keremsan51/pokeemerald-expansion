@@ -5759,6 +5759,8 @@ u16 GetBattleBGM(void)
                 return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(gTrainerBattleOpponent_A), gText_BattleWallyName))
                 return MUS_VS_TRAINER;
+            if (gTrainerBattleOpponent_A == TRAINER_RED)    // BEISPIEL FÜR DEN TESTTRAINER RED in LITTLEROOT TOWN
+                return MUS_VS_CHAMPION;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;

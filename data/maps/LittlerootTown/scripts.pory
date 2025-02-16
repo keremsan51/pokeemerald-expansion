@@ -1082,3 +1082,29 @@ script Move_Relearner {
 		}
 	}
 }
+
+//
+// WICHTIG: Wenn der Trainer Red hier rausgenommen wird, dann muss der Eintrag in src/pokemon.c auch rausgenommen werden. (5762 und 5763)
+//
+// TRAINER BATTLE TEST RED
+
+script Littleroot_Red_Trainer_Battle {
+	trainerbattle_single(TRAINER_RED, Littleroot_Red_Intro, Littleroot_Red_Outro)
+	msgbox(Littleroot_Red_Postbattle, MSGBOX_AUTOCLOSE)
+	waitmessage
+	end
+}
+
+// TEST RED TRAINER
+
+text Littleroot_Red_Intro {
+	format("Intro Text!")
+}
+
+text Littleroot_Red_Outro {
+	format("Outro Text.")
+}
+
+text Littleroot_Red_Postbattle {
+	format("Postbattle text.")
+}

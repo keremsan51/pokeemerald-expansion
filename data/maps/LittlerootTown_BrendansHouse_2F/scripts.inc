@@ -763,6 +763,33 @@ Randomizer_Species_Mode_5:
 	goto Randomizer_Species_Mode_1
 
 
+Dynamic_Wild_Pokemon_Level::
+# 390 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	lockall
+# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox Dynamic_Wild_Pokemon_Level_Text_0, MSGBOX_YESNO
+# 392 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq Dynamic_Wild_Pokemon_Level_2
+# 397 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	clearflag DYNAMIC_LEVEL_WILD_POKEMON
+# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox Dynamic_Wild_Pokemon_Level_Text_2
+Dynamic_Wild_Pokemon_Level_1:
+# 400 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	waitmessage
+# 401 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	releaseall
+	end
+
+Dynamic_Wild_Pokemon_Level_2:
+# 393 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	setflag DYNAMIC_LEVEL_WILD_POKEMON
+# 394 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	msgbox Dynamic_Wild_Pokemon_Level_Text_1
+	goto Dynamic_Wild_Pokemon_Level_1
+
+
 Randomizer_On_Off_Text_0:
 # 309 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Would you like to randomize the game?$"
@@ -802,3 +829,15 @@ Randomizer_Species_Mode_Text_0:
 Randomizer_Species_Mode_Text_1:
 # 383 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
 	.string "Randomizer settings have been saved.$"
+
+Dynamic_Wild_Pokemon_Level_Text_0:
+# 391 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Would you like to enable dynamic\nwild Pokémon levels?$"
+
+Dynamic_Wild_Pokemon_Level_Text_1:
+# 394 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Dynamic wild Pokémon levels are enabled.$"
+
+Dynamic_Wild_Pokemon_Level_Text_2:
+# 398 "data/maps/LittlerootTown_BrendansHouse_2F/scripts.pory"
+	.string "Dynamic wild Pokémon levels\nare disabled.$"

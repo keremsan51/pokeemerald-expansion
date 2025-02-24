@@ -385,3 +385,19 @@ script Randomizer_Species_Mode {
     releaseall
     end
 }
+
+script Dynamic_Wild_Pokemon_Level {
+	lockall
+	msgbox("Would you like to enable dynamic\nwild Pokémon levels?", MSGBOX_YESNO)
+	if(var(VAR_RESULT) == YES) {
+		setflag(DYNAMIC_LEVEL_WILD_POKEMON)
+		msgbox("Dynamic wild Pokémon levels are enabled.")
+	}
+	else {
+		clearflag(DYNAMIC_LEVEL_WILD_POKEMON)
+		msgbox("Dynamic wild Pokémon levels\nare disabled.")
+	}
+	waitmessage
+	releaseall
+	end
+}

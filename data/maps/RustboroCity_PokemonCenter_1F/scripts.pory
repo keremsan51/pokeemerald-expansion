@@ -91,7 +91,7 @@ script Rustboro_Move_Relearner {
 		callnative (TeachMoveRelearnerMove)
 		waitstate
 		if  (var(VAR_0x8004) == 0) {
-			return (Move_Relearner)
+			return
 		}
 		else {
 			msgbox ("Come again soon!")

@@ -472,9 +472,9 @@ static void AddSearchWindow(u8 width)
 }
 
 #define WINDOW_COL_0        (SPECIES_ICON_X + 4)
-#define WINDOW_COL_1        (WINDOW_COL_0 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * (POKEMON_NAME_LENGTH)))
-#define WINDOW_MOVE_NAME_X  (WINDOW_COL_1 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * 6))
-#define SEARCH_ARROW_X      (WINDOW_MOVE_NAME_X + 90)
+#define WINDOW_COL_1        (WINDOW_COL_0 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * (POKEMON_NAME_LENGTH - 2)))
+#define WINDOW_MOVE_NAME_X  (WINDOW_COL_1 + (GetFontAttribute(sDexNavSearchDataPtr->windowId, FONTATTR_MAX_LETTER_WIDTH) * 5))
+#define SEARCH_ARROW_X      (WINDOW_MOVE_NAME_X + 82)
 #define SEARCH_ARROW_Y      0
 
 static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8 hidden)
@@ -514,7 +514,7 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
         {
             // ability name
             StringCopy(gStringVar1, gAbilitiesInfo[GetAbilityBySpecies(species, sDexNavSearchDataPtr->abilityNum)].name);
-            AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1 + 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
+            AddTextPrinterParameterized3(windowId, 0, WINDOW_COL_1, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar1);
 
             // item name
             if (sDexNavSearchDataPtr->heldItem)
@@ -532,7 +532,7 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
         StringExpandPlaceholders(gStringVar4, sText_DexNavChainLong);
     else
         StringExpandPlaceholders(gStringVar4, sText_DexNavChain);
-    AddTextPrinterParameterized3(windowId, 0, SEARCH_ARROW_X - 16, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized3(windowId, 0, SEARCH_ARROW_X - 8, 12, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
 
     CopyWindowToVram(sDexNavSearchDataPtr->windowId, 2);
 }

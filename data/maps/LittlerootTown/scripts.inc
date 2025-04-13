@@ -2137,7 +2137,7 @@ Littleroot_Red_Trainer_Battle::
 # 1092 "data/maps/LittlerootTown/scripts.pory"
 	setflag FLAG_SYS_SET_BATTLE_BGM
 # 1093 "data/maps/LittlerootTown/scripts.pory"
-	setvar VAR_BATTLE_BGM, MUS_VS_MEW
+	setvar VAR_BATTLE_BGM, MUS_FINAL_COL
 # 1094 "data/maps/LittlerootTown/scripts.pory"
 	trainerbattle_single TRAINER_RED, Littleroot_Red_Intro, Littleroot_Red_Outro
 # 1095 "data/maps/LittlerootTown/scripts.pory"

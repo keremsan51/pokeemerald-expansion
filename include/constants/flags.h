@@ -52,9 +52,9 @@
 #define FLAG_DN_SEARCHING            0x26 
 #define FLAG_DN_GET                  0x27 
 #define FLAG_DN_DETECTOR_MODE        0x28 
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_DEBUG_OW_COLLISON       0x29
+#define FLAG_DEBUG_NO_TRAINER_SEE    0x2A
+#define FLAG_DEBUG_NO_ENCOUNTER      0x2B
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag

@@ -1137,18 +1137,27 @@ static void Task_DexNavSearch(u8 taskId)
 
     //Caves and water the pokemon moves around
     if ((sDexNavSearchDataPtr->environment == ENCOUNTER_TYPE_WATER || GetCurrentMapType() == MAP_TYPE_UNDERGROUND)
-        && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel() && sDexNavSearchDataPtr->movementCount < 2
+        && sDexNavSearchDataPtr->proximity < GetMovementProximityBySearchLevel()
+        && sDexNavSearchDataPtr->movementCount < 2
         && task->tRevealed)
     {
         FieldEffectStop(&gSprites[sDexNavSearchDataPtr->fldEffSpriteId], sDexNavSearchDataPtr->fldEffId);
 
         if (!TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 10, 10, TRUE))
         {
-            EndDexNavSearchSetupScript(EventScript_PokemonGotAway, taskId);
-            return;
+            // Wenn der Spieler nicht schleicht, wird das Pokémon als entkommen gewertet.
+            if (!gPlayerAvatar.creeping)
+            {
+                EndDexNavSearchSetupScript(EventScript_PokemonGotAway, taskId);
+                return;
+            }
+            // Falls der Spieler jedoch schleicht, passiert nichts – das Pokémon bleibt,
+            // auch wenn der Versuch, seine Position zu ändern, fehlgeschlagen ist.
         }
-
-        sDexNavSearchDataPtr->movementCount++;
+        else
+        {
+            sDexNavSearchDataPtr->movementCount++;
+        }
     }
 
     DexNavProximityUpdate();

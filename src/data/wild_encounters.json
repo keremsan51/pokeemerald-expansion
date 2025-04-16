@@ -535,7 +535,7 @@
               {
                 "min_level": 4,
                 "max_level": 4,
-                "species": "SPECIES_POOCHYENA"
+                "species": "SPECIES_PAWMI"
               },
               {
                 "min_level": 3,
@@ -1460,64 +1460,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_POOCHYENA"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_MARILL"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_SEEDOT"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_ILLUMISE"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_VOLBEAT"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_TYROGUE"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_TYROGUE"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_MUNCHLAX"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
-                "species": "SPECIES_EEVEE"
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_MAREEP"
               },
               {
-                "min_level": 14,
-                "max_level": 14,
+                "min_level": 17,
+                "max_level": 19,
+                "species": "SPECIES_YAMPER"
+              },
+              {
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_ZORUA"
               },
               {
-                "min_level": 13,
-                "max_level": 13,
+                "min_level": 17,
+                "max_level": 19,
                 "species": "SPECIES_ZORUA_HISUI"
-              },
-              {
-                "min_level": 13,
-                "max_level": 13,
-                "species": "SPECIES_POOCHYENA"
               }
             ]
           },
